@@ -33,4 +33,11 @@ function addProjectDetails(e) {
 
 function callback(result) {
 	console.log(result);
+	var resultID = result.id;
+	var elementName = "#project".concat(resultID, " .thumbnail .details"); //** 
+
+	var address = '<img src="' + result['image'] + '" class="detailsImage">' + '<p>' + result['title'] + '</p>' + '<p>' + result['date'] + '</p>' +
+		result['summary'];
+	$(elementName).html(address);
+
 }
